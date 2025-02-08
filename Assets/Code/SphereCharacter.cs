@@ -1,48 +1,48 @@
 ﻿using UnityEngine;
 
-public class SphereCharacter : MonoBehaviour
+namespace HomeWork1
 {
-    public int hp = 100;
-    public bool isDeath = false;
-    public bool isEnemy = false;
-
-    private MeshRenderer meshRenderer;
-
-    void Start()
+    public class SphereCharacter : MonoBehaviour
     {
-        
-        meshRenderer = GetComponent<MeshRenderer>();
+        public int hp = 100;
+        public bool isDeath = false;
+        public bool isEnemy = false;
 
-        
-        if (isEnemy)
-        {
-            meshRenderer.material.color = Color.red;
-            Debug.Log("Enemy, Color Red");
-        }
-        else
-        {
-            meshRenderer.material.color = Color.blue;
-            Debug.Log("Ally, Color Blue");
-        }
-    }
+        private MeshRenderer meshRenderer;
 
-    public void TakeDamage(int damage)
-    {
-        if (isDeath)
+        public void Start()
         {
-            return;
+            meshRenderer = GetComponent<MeshRenderer>();
+            if (isEnemy)
+            {
+                meshRenderer.material.color = Color.red;
+                Debug.Log("Enemy, Color Red");
+            }
+            else
+            {
+                meshRenderer.material.color = Color.blue;
+                Debug.Log("Ally, Color Blue");
+            }
         }
-        hp -= damage;
 
-        if (hp <= 0)
+        public void TakeDamage(int damage)
         {
-            hp = 0; 
-            isDeath = true;
-            Debug.Log("Deth");
-        }
-        else
-        {
-            Debug.Log($"Damage {damage}. HP Left: {hp}");
+            if (isDeath)
+            {
+                return;
+            }
+            hp -= damage;
+
+            if (hp <= 0)
+            {
+                hp = 0;
+                isDeath = true;
+                Debug.Log("Deth");
+            }
+            else
+            {
+                Debug.Log($"Damage {damage}. HP Left: {hp}");
+            }
         }
     }
 }
