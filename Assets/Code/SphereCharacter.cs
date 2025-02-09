@@ -10,7 +10,7 @@ namespace HomeWork1
 
         private MeshRenderer meshRenderer;
 
-        public void Start()
+        private void Start()
         {
             meshRenderer = GetComponent<MeshRenderer>();
             if (isEnemy)

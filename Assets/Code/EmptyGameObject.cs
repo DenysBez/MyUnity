@@ -4,7 +4,7 @@ namespace HomeWork1
 {
     public class EmptyGameObject : MonoBehaviour
     {
-        void Start()
+        private void Start()
         {
             int health = 100;
             float speed = 5.5f;
