@@ -451,12 +451,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0b1459753142e5baaf200c642455a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 904038817}
-  - {fileID: 666393512}
-  - {fileID: 1624226716}
   healthPackPrefab: {fileID: 919132149155446097, guid: 04691f0334ae92d41b1e3a0603c3d74b,
     type: 3}
+  healthPackObjects:
+  - {fileID: 904038818}
+  - {fileID: 666393513}
+  - {fileID: 1624226717}
 --- !u!4 &490505942
 Transform:
   m_ObjectHideFlags: 0

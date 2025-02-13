@@ -2,8 +2,8 @@
 
 public class HealthPackSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    public GameObject healthPackPrefab;
+    public GameObject healthPackPrefab; // Prefab with Renderer
+    public HealthPack[] healthPackObjects; // Existing HealthPack objects in the scene
 
     void Start()
     {
@@ -12,9 +12,12 @@ public class HealthPackSpawner : MonoBehaviour
 
     void SpawnHealthPacks()
     {
-        foreach (Transform spawnPoint in spawnPoints)
+        foreach (HealthPack healthPack in healthPackObjects)
         {
-            Instantiate(healthPackPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject visualHealthPack = Instantiate(healthPackPrefab, healthPack.transform.position, Quaternion.identity);
+
+            // Set the spawned prefab as a child of the existing HealthPack object
+            visualHealthPack.transform.SetParent(healthPack.transform);
         }
     }
 }
