@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
         float rotate = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
 
         transform.position += transform.forward * move;
-
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + rotate, 0);
+        transform.Rotate(0, rotate, 0);
     }
 }

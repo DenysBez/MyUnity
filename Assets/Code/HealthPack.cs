@@ -6,7 +6,7 @@ public class HealthPack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<CapsulePlayerIdentifier>() != null)
         {
             Debug.Log("Health pack collected! HP increased by " + healthCounter);
             Destroy(gameObject);
